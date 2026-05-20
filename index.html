@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>IR UTS Booking</title>
+  <title>Indian Railway UTS Booking</title>
 
   <link rel="stylesheet" href="style.css"/>
 
@@ -13,14 +13,14 @@
 
 <body>
 
-<!-- LOGIN/SIGNUP -->
+<!-- AUTH -->
 <div class="auth-container" id="authContainer">
 
   <!-- LOGIN -->
   <div class="auth-box" id="loginBox">
 
     <div class="auth-header">
-      <img src="images/IR-UTS.webp" alt="logo">
+      <img src="images/IR-UTS.webp" alt="Logo">
       <h2>Indian Railway UTS</h2>
       <p>Login to continue</p>
     </div>
@@ -29,26 +29,46 @@
 
       <div class="form-group">
         <label>Email</label>
-        <input type="email" id="loginEmail" class="form-control" required>
+        <input type="email"
+        id="loginEmail"
+        class="form-control"
+        required>
       </div>
 
       <div class="form-group input-icon">
+
         <label>Password</label>
-        <input type="password" id="loginPassword" class="form-control" required>
-        <i class="fas fa-eye" id="toggleLoginPassword"></i>
+
+        <input type="password"
+        id="loginPassword"
+        class="form-control"
+        required>
+
+        <i class="fas fa-eye"
+        id="toggleLoginPassword"></i>
+
       </div>
 
-      <button class="btn btn-orange" type="submit">
+      <button class="btn btn-orange"
+      type="submit">
+
         Login
+
       </button>
 
     </form>
 
     <div class="auth-footer">
+
       Don't have account?
-      <button class="btn-link" id="showSignup">
+
+      <button class="btn-link"
+      id="showSignup">
+
         Sign Up
+
       </button>
+
     </div>
 
   </div>
@@ -57,44 +77,78 @@
   <div class="auth-box" id="signupBox">
 
     <div class="auth-header">
-      <img src="images/IR-UTS.webp" alt="logo">
+
+      <img src="images/IR-UTS.webp" alt="Logo">
+
       <h2>Create Account</h2>
+
     </div>
 
     <form id="signupForm">
 
       <div class="form-group">
         <label>Name</label>
-        <input type="text" id="signupName" class="form-control" required>
+
+        <input type="text"
+        id="signupName"
+        class="form-control"
+        required>
       </div>
 
       <div class="form-group">
         <label>Email</label>
-        <input type="email" id="signupEmail" class="form-control" required>
+
+        <input type="email"
+        id="signupEmail"
+        class="form-control"
+        required>
       </div>
 
       <div class="form-group input-icon">
+
         <label>Password</label>
-        <input type="password" id="signupPassword" class="form-control" required>
-        <i class="fas fa-eye" id="toggleSignupPassword"></i>
+
+        <input type="password"
+        id="signupPassword"
+        class="form-control"
+        required>
+
+        <i class="fas fa-eye"
+        id="toggleSignupPassword"></i>
+
       </div>
 
       <div class="form-group">
+
         <label>Mobile</label>
-        <input type="tel" id="signupMobile" class="form-control" required>
+
+        <input type="tel"
+        id="signupMobile"
+        class="form-control"
+        required>
+
       </div>
 
-      <button class="btn btn-orange" type="submit">
+      <button class="btn btn-orange"
+      type="submit">
+
         Sign Up
+
       </button>
 
     </form>
 
     <div class="auth-footer">
+
       Already have account?
-      <button class="btn-link" id="showLogin">
+
+      <button class="btn-link"
+      id="showLogin">
+
         Login
+
       </button>
+
     </div>
 
   </div>
@@ -108,18 +162,34 @@
   <header class="header">
 
     <div class="header-left">
-      <img src="images/IR-UTS.webp" class="logo">
+
+      <img src="images/IR-UTS.webp"
+      class="logo">
 
       <div>
         <h1>Railway UTS</h1>
       </div>
+
     </div>
 
     <nav class="nav-links">
-      <a href="#" id="homeLink">Home</a>
-      <a href="#" id="bookTicketLink">Book Ticket</a>
-      <a href="#" id="myTicketsLink">My Tickets</a>
-      <a href="#" id="logoutBtn">Logout</a>
+
+      <a href="#" id="homeLink">
+        Home
+      </a>
+
+      <a href="#" id="bookTicketLink">
+        Book Ticket
+      </a>
+
+      <a href="#" id="myTicketsLink">
+        My Tickets
+      </a>
+
+      <a href="#" id="logoutBtn">
+        Logout
+      </a>
+
     </nav>
 
   </header>
@@ -128,30 +198,39 @@
   <div class="container">
 
     <!-- BOOKING -->
-    <div class="booking-form" id="bookingFormSection">
+    <div class="booking-form"
+    id="bookingFormSection">
 
-      <h2 class="form-title">Book Ticket</h2>
+      <h2 class="form-title">
+        Book Ticket
+      </h2>
 
       <form id="bookingForm">
 
         <div class="form-row">
 
           <div class="form-group">
-            <label>From</label>
+
+            <label>From Station</label>
+
             <input type="text"
             id="fromStation"
             class="form-control"
             placeholder="Delhi"
             required>
+
           </div>
 
           <div class="form-group">
-            <label>To</label>
+
+            <label>To Station</label>
+
             <input type="text"
             id="toStation"
             class="form-control"
             placeholder="Mumbai"
             required>
+
           </div>
 
         </div>
@@ -159,14 +238,18 @@
         <div class="form-row">
 
           <div class="form-group">
-            <label>Date</label>
+
+            <label>Journey Date</label>
+
             <input type="date"
             id="journeyDate"
             class="form-control"
             required>
+
           </div>
 
           <div class="form-group">
+
             <label>Passengers</label>
 
             <select id="passengers"
@@ -175,6 +258,7 @@
               <option>1</option>
               <option>2</option>
               <option>3</option>
+              <option>4</option>
 
             </select>
 
@@ -182,8 +266,44 @@
 
         </div>
 
-        <button class="btn btn-orange" type="submit">
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label>Train Type</label>
+
+            <select id="trainType"
+            class="form-control">
+
+              <option>MAIL/EXPRESS</option>
+              <option>SUPERFAST</option>
+              <option>ORDINARY</option>
+
+            </select>
+
+          </div>
+
+          <div class="form-group">
+
+            <label>Class</label>
+
+            <select id="ticketClassSelect"
+            class="form-control">
+
+              <option>2nd SITTING</option>
+              <option>SLEEPER</option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+        <button class="btn btn-orange"
+        type="submit">
+
           Continue Payment
+
         </button>
 
       </form>
@@ -191,9 +311,12 @@
     </div>
 
     <!-- PAYMENT -->
-    <div class="payment-section" id="paymentSection">
+    <div class="payment-section"
+    id="paymentSection">
 
       <h2>UPI Payment</h2>
+
+      <br>
 
       <input type="text"
       id="upiId"
@@ -213,10 +336,17 @@
     </div>
 
     <!-- TICKET -->
-    <div class="ticket-container" id="ticketContainer">
+    <div class="ticket-container"
+    id="ticketContainer">
 
       <div class="ticket-header">
-        <h2>Happy Journey</h2>
+
+        <h2>HAPPY JOURNEY</h2>
+
+        <p>
+          INDIAN RAILWAYS - UNRESERVED TICKET
+        </p>
+
       </div>
 
       <div class="ticket-body">
@@ -239,8 +369,36 @@
           </div>
 
           <div class="ticket-info-item">
-            <small>PNR</small>
+            <small>TRAIN TYPE</small>
+            <p id="ticketTrainType"></p>
+          </div>
+
+          <div class="ticket-info-item">
+            <small>CLASS</small>
+            <p id="ticketClass"></p>
+          </div>
+
+          <div class="ticket-info-item">
+            <small>PASSENGERS</small>
+            <p id="ticketPassengers"></p>
+          </div>
+
+        </div>
+
+        <div class="ticket-divider">
+          <span>JOURNEY DETAILS</span>
+        </div>
+
+        <div class="ticket-info">
+
+          <div class="ticket-info-item">
+            <small>PNR NUMBER</small>
             <p id="ticketPnr"></p>
+          </div>
+
+          <div class="ticket-info-item">
+            <small>BOOKING DATE</small>
+            <p id="ticketBookingDate"></p>
           </div>
 
         </div>
@@ -249,18 +407,28 @@
 
           <img id="ticketQr">
 
+          <p style="margin-top:10px;">
+            SCAN QR CODE FOR VERIFICATION
+          </p>
+
         </div>
 
       </div>
 
       <div class="ticket-footer">
 
+        <h3>THE LEGITIMATE TICKET</h3>
+
+        <p>
+          Please carry valid ID proof during journey
+        </p>
+
         <div class="ticket-actions">
 
           <button class="btn btn-orange"
           onclick="printTicket()">
 
-            Print Ticket
+            PRINT TICKET
 
           </button>
 
@@ -271,7 +439,8 @@
     </div>
 
     <!-- MY TICKETS -->
-    <div class="my-tickets" id="myTickets">
+    <div class="my-tickets"
+    id="myTickets">
 
       <h2>My Tickets</h2>
 
