@@ -1,0 +1,357 @@
+:root{
+    --orange:#ff671f;
+    --orange-dark:#e85d15;
+    --blue:#005baa;
+    --white:#fff;
+    --light:#f5f5f5;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:var(--light);
+    overflow-x:hidden;
+}
+
+/* AUTH */
+
+.auth-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+    background:
+    linear-gradient(rgba(0,0,0,.6),
+    rgba(0,0,0,.6)),
+    url('https://images.unsplash.com/photo-1474487548417-781cb71495f3?q=80&w=1600')
+    center/cover;
+}
+
+.auth-box{
+    width:100%;
+    max-width:430px;
+    background:#fff;
+    padding:30px;
+    border-radius:14px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.auth-header{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.auth-header img{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+    margin-bottom:10px;
+}
+
+.auth-header h2{
+    color:var(--orange);
+    margin-bottom:8px;
+}
+
+.auth-footer{
+    text-align:center;
+    margin-top:18px;
+}
+
+.btn-link{
+    border:none;
+    background:none;
+    color:var(--orange);
+    cursor:pointer;
+    font-weight:600;
+}
+
+/* FORM */
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:7px;
+    font-weight:600;
+}
+
+.form-control{
+    width:100%;
+    padding:12px 14px;
+    border:1px solid #ddd;
+    border-radius:6px;
+    font-size:15px;
+}
+
+.form-control:focus{
+    outline:none;
+    border-color:var(--orange);
+}
+
+.input-icon{
+    position:relative;
+}
+
+.input-icon i{
+    position:absolute;
+    top:43px;
+    right:14px;
+    color:#666;
+    cursor:pointer;
+}
+
+.btn{
+    width:100%;
+    padding:13px;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn-orange{
+    background:var(--orange);
+    color:#fff;
+}
+
+.btn-orange:hover{
+    background:var(--orange-dark);
+}
+
+/* APP */
+
+.app-container{
+    display:none;
+}
+
+.header{
+    background:var(--orange);
+    color:#fff;
+    padding:14px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+    position:sticky;
+    top:0;
+    z-index:999;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.header-left{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#fff;
+    padding:4px;
+    object-fit:contain;
+}
+
+.nav-links{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.nav-links a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.nav-links a:hover{
+    opacity:.8;
+}
+
+/* MAIN */
+
+.container{
+    width:95%;
+    max-width:1200px;
+    margin:25px auto;
+}
+
+.booking-form,
+.payment-section,
+.ticket-container,
+.my-tickets{
+    background:#fff;
+    border-radius:12px;
+    padding:25px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    margin-bottom:25px;
+}
+
+.form-title{
+    margin-bottom:20px;
+    color:var(--orange);
+}
+
+.form-row{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:15px;
+}
+
+.form-row .form-group{
+    flex:1;
+    min-width:230px;
+}
+
+/* PAYMENT */
+
+.payment-section{
+    display:none;
+}
+
+/* TICKET */
+
+.ticket-container{
+    display:none;
+    overflow:hidden;
+}
+
+.ticket-header{
+    background:var(--orange);
+    color:#fff;
+    text-align:center;
+    padding:18px;
+}
+
+.ticket-body{
+    padding:20px;
+}
+
+.ticket-info{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.ticket-info-item{
+    background:#fafafa;
+    border:1px solid #eee;
+    border-radius:8px;
+    padding:12px;
+}
+
+.ticket-info-item small{
+    color:#666;
+    display:block;
+    margin-bottom:5px;
+}
+
+.ticket-info-item p{
+    font-weight:700;
+}
+
+.ticket-qr{
+    text-align:center;
+    margin-top:20px;
+}
+
+.ticket-qr img{
+    width:160px;
+    max-width:100%;
+    border:1px solid #ddd;
+    padding:5px;
+    background:#fff;
+}
+
+.ticket-footer{
+    background:var(--blue);
+    padding:20px;
+    text-align:center;
+}
+
+.ticket-actions{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.ticket-actions button{
+    width:auto;
+    min-width:150px;
+}
+
+/* MY TICKETS */
+
+.my-tickets{
+    display:none;
+}
+
+.ticket-list{
+    margin-top:20px;
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .header{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .header-left{
+        flex-direction:column;
+    }
+
+    .nav-links{
+        justify-content:center;
+        gap:12px;
+    }
+
+    .ticket-actions{
+        flex-direction:column;
+    }
+
+    .ticket-actions button{
+        width:100%;
+    }
+}
+
+@media(max-width:480px){
+
+    .auth-box,
+    .booking-form,
+    .payment-section,
+    .ticket-container{
+        padding:18px;
+    }
+
+    .logo{
+        width:55px;
+        height:55px;
+    }
+
+    .nav-links a{
+        font-size:14px;
+    }
+}
