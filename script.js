@@ -65,7 +65,7 @@ window.onload = () => {
     new Date().toISOString().split('T')[0];
 };
 
-/* LOGIN/SIGNUP TOGGLE */
+/* LOGIN / SIGNUP TOGGLE */
 
 showSignup.addEventListener('click', () => {
 
@@ -295,22 +295,43 @@ function generateTicket(){
     const passengers =
     document.getElementById('passengers').value;
 
+    const trainType =
+    document.getElementById('trainType').value;
+
+    const ticketClass =
+    document.getElementById('ticketClassSelect').value;
+
+    const bookingDate =
+    new Date().toLocaleDateString();
+
     const pnr =
     'UTS' + Math.floor(
         10000000 + Math.random() * 90000000
     );
 
     document.getElementById('ticketFrom')
-    .innerText = from;
+    .innerText = from.toUpperCase();
 
     document.getElementById('ticketTo')
-    .innerText = to;
+    .innerText = to.toUpperCase();
 
     document.getElementById('ticketDate')
     .innerText = date;
 
+    document.getElementById('ticketPassengers')
+    .innerText = passengers;
+
+    document.getElementById('ticketTrainType')
+    .innerText = trainType;
+
+    document.getElementById('ticketClass')
+    .innerText = ticketClass;
+
     document.getElementById('ticketPnr')
     .innerText = pnr;
+
+    document.getElementById('ticketBookingDate')
+    .innerText = bookingDate;
 
     document.getElementById('ticketQr')
     .src =
@@ -322,6 +343,9 @@ function generateTicket(){
         to,
         date,
         passengers,
+        trainType,
+        ticketClass,
+        bookingDate,
         pnr
     };
 
@@ -338,7 +362,6 @@ function generateTicket(){
     bookingForm.reset();
 
     alert('Payment Successful');
-
 }
 
 /* UPDATE STORAGE */
@@ -400,6 +423,10 @@ function loadTickets(){
         <p><b>Date:</b> ${ticket.date}</p>
 
         <p><b>Passengers:</b> ${ticket.passengers}</p>
+
+        <p><b>Train:</b> ${ticket.trainType}</p>
+
+        <p><b>Class:</b> ${ticket.ticketClass}</p>
 
         <p><b>PNR:</b> ${ticket.pnr}</p>
 
