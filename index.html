@@ -13,26 +13,33 @@
 
 <body>
 
-<!-- AUTH -->
 <div class="auth-container" id="authContainer">
 
   <!-- LOGIN -->
+
   <div class="auth-box" id="loginBox">
 
     <div class="auth-header">
+
       <img src="images/IR-UTS.webp" alt="Logo">
+
       <h2>Indian Railway UTS</h2>
+
       <p>Login to continue</p>
+
     </div>
 
     <form id="loginForm">
 
       <div class="form-group">
+
         <label>Email</label>
+
         <input type="email"
         id="loginEmail"
         class="form-control"
         required>
+
       </div>
 
       <div class="form-group input-icon">
@@ -74,7 +81,9 @@
   </div>
 
   <!-- SIGNUP -->
-  <div class="auth-box" id="signupBox">
+
+  <div class="auth-box"
+  id="signupBox">
 
     <div class="auth-header">
 
@@ -87,21 +96,25 @@
     <form id="signupForm">
 
       <div class="form-group">
+
         <label>Name</label>
 
         <input type="text"
         id="signupName"
         class="form-control"
         required>
+
       </div>
 
       <div class="form-group">
+
         <label>Email</label>
 
         <input type="email"
         id="signupEmail"
         class="form-control"
         required>
+
       </div>
 
       <div class="form-group input-icon">
@@ -156,300 +169,319 @@
 </div>
 
 <!-- APP -->
-<div class="app-container" id="appContainer">
 
-  <!-- HEADER -->
-  <header class="header">
+<div class="app-container"
+id="appContainer">
 
-    <div class="header-left">
+<header class="header">
 
-      <img src="images/IR-UTS.webp"
-      class="logo">
+<div class="header-left">
 
-      <div>
-        <h1>Railway UTS</h1>
-      </div>
+<img src="images/IR-UTS.webp"
+class="logo">
 
-    </div>
+<h1>Railway UTS</h1>
 
-    <nav class="nav-links">
+</div>
 
-      <a href="#" id="homeLink">
-        Home
-      </a>
+<nav class="nav-links">
 
-      <a href="#" id="bookTicketLink">
-        Book Ticket
-      </a>
+<a href="#" id="homeLink">Home</a>
 
-      <a href="#" id="myTicketsLink">
-        My Tickets
-      </a>
+<a href="#" id="bookTicketLink">Book Ticket</a>
 
-      <a href="#" id="logoutBtn">
-        Logout
-      </a>
+<a href="#" id="myTicketsLink">My Tickets</a>
 
-    </nav>
+<a href="#" id="logoutBtn">Logout</a>
 
-  </header>
+</nav>
 
-  <!-- MAIN -->
-  <div class="container">
+</header>
 
-    <!-- BOOKING -->
-    <div class="booking-form"
-    id="bookingFormSection">
+<div class="container">
 
-      <h2 class="form-title">
-        Book Ticket
-      </h2>
+<!-- BOOKING -->
 
-      <form id="bookingForm">
+<div class="booking-form"
+id="bookingFormSection">
 
-        <div class="form-row">
+<h2 class="form-title">
 
-          <div class="form-group">
+Book Ticket
 
-            <label>From Station</label>
+</h2>
 
-            <input type="text"
-            id="fromStation"
-            class="form-control"
-            placeholder="Delhi"
-            required>
+<form id="bookingForm">
 
-          </div>
+<div class="form-row">
 
-          <div class="form-group">
+<div class="form-group">
 
-            <label>To Station</label>
+<label>From Station</label>
 
-            <input type="text"
-            id="toStation"
-            class="form-control"
-            placeholder="Mumbai"
-            required>
+<input type="text"
+id="fromStation"
+class="form-control"
+placeholder="Delhi"
+required>
 
-          </div>
+</div>
 
-        </div>
+<div class="form-group">
 
-        <div class="form-row">
+<label>To Station</label>
 
-          <div class="form-group">
+<input type="text"
+id="toStation"
+class="form-control"
+placeholder="Mumbai"
+required>
 
-            <label>Journey Date</label>
+</div>
 
-            <input type="date"
-            id="journeyDate"
-            class="form-control"
-            required>
+</div>
 
-          </div>
+<div class="form-row">
 
-          <div class="form-group">
+<div class="form-group">
 
-            <label>Passengers</label>
+<label>Journey Date</label>
 
-            <select id="passengers"
-            class="form-control">
+<input type="date"
+id="journeyDate"
+class="form-control"
+required>
 
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
+</div>
 
-            </select>
+<div class="form-group">
 
-          </div>
+<label>Passengers</label>
 
-        </div>
+<select id="passengers"
+class="form-control">
 
-        <div class="form-row">
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
 
-          <div class="form-group">
+</select>
 
-            <label>Train Type</label>
+</div>
 
-            <select id="trainType"
-            class="form-control">
+</div>
 
-              <option>MAIL/EXPRESS</option>
-              <option>SUPERFAST</option>
-              <option>ORDINARY</option>
+<div class="form-row">
 
-            </select>
+<div class="form-group">
 
-          </div>
+<label>Train Type</label>
 
-          <div class="form-group">
+<select id="trainType"
+class="form-control">
 
-            <label>Class</label>
+<option>MAIL/EXPRESS</option>
+<option>SUPERFAST</option>
+<option>ORDINARY</option>
 
-            <select id="ticketClassSelect"
-            class="form-control">
+</select>
 
-              <option>2nd SITTING</option>
-              <option>SLEEPER</option>
+</div>
 
-            </select>
+<div class="form-group">
 
-          </div>
+<label>Class</label>
 
-        </div>
+<select id="ticketClassSelect"
+class="form-control">
 
-        <button class="btn btn-orange"
-        type="submit">
+<option>2nd SITTING</option>
+<option>SLEEPER</option>
 
-          Continue Payment
+</select>
 
-        </button>
+</div>
 
-      </form>
+</div>
 
-    </div>
+<button class="btn btn-orange"
+type="submit">
 
-    <!-- PAYMENT -->
-    <div class="payment-section"
-    id="paymentSection">
+Continue Payment
 
-      <h2>UPI Payment</h2>
+</button>
 
-      <br>
+</form>
 
-      <input type="text"
-      id="upiId"
-      class="form-control"
-      placeholder="Enter UPI ID">
+</div>
 
-      <br>
+<!-- PAYMENT -->
 
-      <button type="button"
-      class="btn btn-orange"
-      id="payNow">
+<div class="payment-section"
+id="paymentSection">
 
-        Pay Now
+<h2>UPI Payment</h2>
 
-      </button>
+<br>
 
-    </div>
+<input type="text"
+id="upiId"
+class="form-control"
+placeholder="Enter UPI ID">
 
-    <!-- TICKET -->
-    <div class="ticket-container"
-    id="ticketContainer">
+<br>
 
-      <div class="ticket-header">
+<button class="btn btn-orange"
+id="payNow">
 
-        <h2>HAPPY JOURNEY</h2>
+Pay Now
 
-        <p>
-          INDIAN RAILWAYS - UNRESERVED TICKET
-        </p>
+</button>
 
-      </div>
+</div>
 
-      <div class="ticket-body">
+<!-- TICKET -->
 
-        <div class="ticket-info">
+<div class="ticket-container"
+id="ticketContainer">
 
-          <div class="ticket-info-item">
-            <small>FROM</small>
-            <p id="ticketFrom"></p>
-          </div>
+<div class="ticket-header">
 
-          <div class="ticket-info-item">
-            <small>TO</small>
-            <p id="ticketTo"></p>
-          </div>
+<h2>HAPPY JOURNEY</h2>
 
-          <div class="ticket-info-item">
-            <small>DATE</small>
-            <p id="ticketDate"></p>
-          </div>
+<p>INDIAN RAILWAYS - UNRESERVED TICKET</p>
 
-          <div class="ticket-info-item">
-            <small>TRAIN TYPE</small>
-            <p id="ticketTrainType"></p>
-          </div>
+</div>
 
-          <div class="ticket-info-item">
-            <small>CLASS</small>
-            <p id="ticketClass"></p>
-          </div>
+<div class="ticket-body">
 
-          <div class="ticket-info-item">
-            <small>PASSENGERS</small>
-            <p id="ticketPassengers"></p>
-          </div>
+<div class="ticket-info">
 
-        </div>
+<div class="ticket-info-item">
 
-        <div class="ticket-divider">
-          <span>JOURNEY DETAILS</span>
-        </div>
+<small>FROM</small>
 
-        <div class="ticket-info">
+<p id="ticketFrom"></p>
 
-          <div class="ticket-info-item">
-            <small>PNR NUMBER</small>
-            <p id="ticketPnr"></p>
-          </div>
+</div>
 
-          <div class="ticket-info-item">
-            <small>BOOKING DATE</small>
-            <p id="ticketBookingDate"></p>
-          </div>
+<div class="ticket-info-item">
 
-        </div>
+<small>TO</small>
 
-        <div class="ticket-qr">
+<p id="ticketTo"></p>
 
-          <img id="ticketQr">
+</div>
 
-          <p style="margin-top:10px;">
-            SCAN QR CODE FOR VERIFICATION
-          </p>
+<div class="ticket-info-item">
 
-        </div>
+<small>DATE</small>
 
-      </div>
+<p id="ticketDate"></p>
 
-      <div class="ticket-footer">
+</div>
 
-        <h3>THE LEGITIMATE TICKET</h3>
+<div class="ticket-info-item">
 
-        <p>
-          Please carry valid ID proof during journey
-        </p>
+<small>TRAIN TYPE</small>
 
-        <div class="ticket-actions">
+<p id="ticketTrainType"></p>
 
-          <button class="btn btn-orange"
-          onclick="printTicket()">
+</div>
 
-            PRINT TICKET
+<div class="ticket-info-item">
 
-          </button>
+<small>CLASS</small>
 
-        </div>
+<p id="ticketClass"></p>
 
-      </div>
+</div>
 
-    </div>
+<div class="ticket-info-item">
 
-    <!-- MY TICKETS -->
-    <div class="my-tickets"
-    id="myTickets">
+<small>PASSENGERS</small>
 
-      <h2>My Tickets</h2>
+<p id="ticketPassengers"></p>
 
-      <div class="ticket-list"
-      id="ticketList"></div>
+</div>
 
-    </div>
+</div>
 
-  </div>
+<div class="ticket-divider">
+
+<span>JOURNEY DETAILS</span>
+
+</div>
+
+<div class="ticket-info">
+
+<div class="ticket-info-item">
+
+<small>PNR NUMBER</small>
+
+<p id="ticketPnr"></p>
+
+</div>
+
+<div class="ticket-info-item">
+
+<small>BOOKING DATE</small>
+
+<p id="ticketBookingDate"></p>
+
+</div>
+
+</div>
+
+<div class="ticket-qr">
+
+<img id="ticketQr">
+
+<p style="margin-top:10px;">
+
+SCAN QR CODE FOR VERIFICATION
+
+</p>
+
+</div>
+
+</div>
+
+<div class="ticket-footer">
+
+<h3>THE LEGITIMATE TICKET</h3>
+
+<p>Please carry valid ID proof during journey</p>
+
+<div class="ticket-actions">
+
+<button class="btn btn-orange"
+onclick="printTicket()">
+
+PRINT TICKET
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MY TICKETS -->
+
+<div class="my-tickets"
+id="myTickets">
+
+<h2>My Tickets</h2>
+
+<div class="ticket-list"
+id="ticketList"></div>
+
+</div>
+
+</div>
 
 </div>
 
