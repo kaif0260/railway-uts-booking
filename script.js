@@ -302,36 +302,38 @@ function generateTicket(){
     document.getElementById('ticketClassSelect').value;
 
     const bookingDate =
-    new Date().toLocaleDateString();
+    new Date().toLocaleDateString('en-IN');
 
     const pnr =
     'UTS' + Math.floor(
         10000000 + Math.random() * 90000000
     );
 
+    /* DISPLAY DATA */
+
     document.getElementById('ticketFrom')
-    .innerText = from.toUpperCase();
+    .innerHTML = from.toUpperCase();
 
     document.getElementById('ticketTo')
-    .innerText = to.toUpperCase();
+    .innerHTML = to.toUpperCase();
 
     document.getElementById('ticketDate')
-    .innerText = date;
+    .innerHTML = date;
 
     document.getElementById('ticketPassengers')
-    .innerText = passengers;
+    .innerHTML = passengers;
 
     document.getElementById('ticketTrainType')
-    .innerText = trainType;
+    .innerHTML = trainType;
 
     document.getElementById('ticketClass')
-    .innerText = ticketClass;
+    .innerHTML = ticketClass;
 
     document.getElementById('ticketPnr')
-    .innerText = pnr;
+    .innerHTML = pnr;
 
     document.getElementById('ticketBookingDate')
-    .innerText = bookingDate;
+    .innerHTML = bookingDate;
 
     document.getElementById('ticketQr')
     .src =
@@ -349,11 +351,20 @@ function generateTicket(){
         pnr
     };
 
+    if(!currentUser.tickets){
+
+        currentUser.tickets = [];
+    }
+
     currentUser.tickets.push(ticket);
 
     updateUserData();
 
+    bookingFormSection.style.display = 'none';
+
     paymentSection.style.display = 'none';
+
+    myTicketsSection.style.display = 'none';
 
     ticketContainer.style.display = 'block';
 
@@ -361,7 +372,7 @@ function generateTicket(){
 
     bookingForm.reset();
 
-    alert('Payment Successful');
+    alert('Ticket Booked Successfully');
 }
 
 /* UPDATE STORAGE */
@@ -398,11 +409,25 @@ function loadTickets(){
 
     ticketList.innerHTML = '';
 
-    if(!currentUser.tickets ||
-    currentUser.tickets.length === 0){
+    const latestUser =
+    JSON.parse(localStorage.getItem('railwayCurrentUser'));
 
-        ticketList.innerHTML =
-        '<p>No tickets booked yet</p>';
+    if(latestUser){
+
+        currentUser = latestUser;
+    }
+
+    if(
+        !currentUser ||
+        !currentUser.tickets ||
+        currentUser.tickets.length === 0
+    ){
+
+        ticketList.innerHTML = `
+        <p style="text-align:center;">
+        No tickets booked yet
+        </p>
+        `;
 
         return;
     }
@@ -416,7 +441,9 @@ function loadTickets(){
 
         div.innerHTML = `
 
-        <h3>${ticket.from} → ${ticket.to}</h3>
+        <h3>
+        ${ticket.from} → ${ticket.to}
+        </h3>
 
         <br>
 
@@ -430,11 +457,69 @@ function loadTickets(){
 
         <p><b>PNR:</b> ${ticket.pnr}</p>
 
+        <br>
+
+        <button
+        class="btn btn-orange"
+        onclick="viewTicket('${ticket.pnr}')">
+
+        View Ticket
+
+        </button>
+
         `;
 
         ticketList.appendChild(div);
 
     });
+}
+
+/* VIEW TICKET */
+
+function viewTicket(pnr){
+
+    const ticket =
+    currentUser.tickets.find(
+        t => t.pnr === pnr
+    );
+
+    if(!ticket) return;
+
+    document.getElementById('ticketFrom')
+    .innerHTML = ticket.from;
+
+    document.getElementById('ticketTo')
+    .innerHTML = ticket.to;
+
+    document.getElementById('ticketDate')
+    .innerHTML = ticket.date;
+
+    document.getElementById('ticketPassengers')
+    .innerHTML = ticket.passengers;
+
+    document.getElementById('ticketTrainType')
+    .innerHTML = ticket.trainType;
+
+    document.getElementById('ticketClass')
+    .innerHTML = ticket.ticketClass;
+
+    document.getElementById('ticketPnr')
+    .innerHTML = ticket.pnr;
+
+    document.getElementById('ticketBookingDate')
+    .innerHTML = ticket.bookingDate;
+
+    document.getElementById('ticketQr')
+    .src =
+    `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${ticket.pnr}`;
+
+    bookingFormSection.style.display = 'none';
+
+    paymentSection.style.display = 'none';
+
+    myTicketsSection.style.display = 'none';
+
+    ticketContainer.style.display = 'block';
 }
 
 /* NAVIGATION */
