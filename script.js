@@ -44,7 +44,7 @@ document.getElementById('myTicketsLink');
 
 let currentUser = null;
 
-/* CHECK LOGIN */
+/* PAGE LOAD */
 
 window.onload = () => {
 
@@ -65,7 +65,7 @@ window.onload = () => {
     new Date().toISOString().split('T')[0];
 };
 
-/* TOGGLE LOGIN/SIGNUP */
+/* LOGIN/SIGNUP TOGGLE */
 
 showSignup.addEventListener('click', () => {
 
@@ -121,16 +121,22 @@ signupForm.addEventListener('submit', e => {
     e.preventDefault();
 
     const name =
-    document.getElementById('signupName').value;
+    document.getElementById('signupName').value.trim();
 
     const email =
-    document.getElementById('signupEmail').value;
+    document.getElementById('signupEmail').value.trim();
 
     const password =
-    document.getElementById('signupPassword').value;
+    document.getElementById('signupPassword').value.trim();
 
     const mobile =
-    document.getElementById('signupMobile').value;
+    document.getElementById('signupMobile').value.trim();
+
+    if(password.length < 6){
+
+        alert('Password must be at least 6 characters');
+        return;
+    }
 
     const users =
     JSON.parse(localStorage.getItem('railwayUsers')) || [];
@@ -185,10 +191,10 @@ loginForm.addEventListener('submit', e => {
     e.preventDefault();
 
     const email =
-    document.getElementById('loginEmail').value;
+    document.getElementById('loginEmail').value.trim();
 
     const password =
-    document.getElementById('loginPassword').value;
+    document.getElementById('loginPassword').value.trim();
 
     const users =
     JSON.parse(localStorage.getItem('railwayUsers')) || [];
@@ -202,7 +208,7 @@ loginForm.addEventListener('submit', e => {
 
     if(!user){
 
-        alert('Invalid Credentials');
+        alert('Invalid Email or Password');
         return;
     }
 
@@ -228,6 +234,18 @@ bookingForm.addEventListener('submit', e => {
 
     e.preventDefault();
 
+    const from =
+    document.getElementById('fromStation').value.trim();
+
+    const to =
+    document.getElementById('toStation').value.trim();
+
+    if(from === '' || to === ''){
+
+        alert('Please fill all fields');
+        return;
+    }
+
     bookingFormSection.style.display = 'none';
 
     paymentSection.style.display = 'block';
@@ -239,9 +257,9 @@ bookingForm.addEventListener('submit', e => {
 payNow.addEventListener('click', () => {
 
     const upi =
-    document.getElementById('upiId').value;
+    document.getElementById('upiId').value.trim();
 
-    if(!upi){
+    if(upi === ''){
 
         alert('Enter UPI ID');
         return;
@@ -317,18 +335,20 @@ function generateTicket(){
 
     loadTickets();
 
+    bookingForm.reset();
+
     alert('Payment Successful');
 
 }
 
-/* UPDATE USER */
+/* UPDATE STORAGE */
 
 function updateUserData(){
 
     const users =
     JSON.parse(localStorage.getItem('railwayUsers')) || [];
 
-    const updated = users.map(user => {
+    const updatedUsers = users.map(user => {
 
         if(user.email === currentUser.email){
 
@@ -340,7 +360,7 @@ function updateUserData(){
 
     localStorage.setItem(
         'railwayUsers',
-        JSON.stringify(updated)
+        JSON.stringify(updatedUsers)
     );
 
     localStorage.setItem(
@@ -355,10 +375,11 @@ function loadTickets(){
 
     ticketList.innerHTML = '';
 
-    if(currentUser.tickets.length === 0){
+    if(!currentUser.tickets ||
+    currentUser.tickets.length === 0){
 
         ticketList.innerHTML =
-        '<p>No tickets booked</p>';
+        '<p>No tickets booked yet</p>';
 
         return;
     }
@@ -377,6 +398,8 @@ function loadTickets(){
         <br>
 
         <p><b>Date:</b> ${ticket.date}</p>
+
+        <p><b>Passengers:</b> ${ticket.passengers}</p>
 
         <p><b>PNR:</b> ${ticket.pnr}</p>
 
@@ -438,6 +461,9 @@ function showHome(){
     ticketContainer.style.display = 'none';
 
     myTicketsSection.style.display = 'none';
+
+    document.getElementById('journeyDate').value =
+    new Date().toISOString().split('T')[0];
 }
 
 /* LOGOUT */
@@ -455,6 +481,10 @@ logoutBtn.addEventListener('click', () => {
     loginBox.style.display = 'block';
 
     signupBox.style.display = 'none';
+
+    loginForm.reset();
+
+    signupForm.reset();
 
 });
 
